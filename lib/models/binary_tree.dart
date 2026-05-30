@@ -84,8 +84,8 @@ class BinaryTree {
     )) {
       return 'duplicate';
     }
-
-    if (getDepth(root) >= 5) {
+//cambio en caliente, profundidad máxima de 5 para evitar problemas de rendimiento
+    if (getDepth(root) >= 6) {
       return 'depth';
     }
 
@@ -120,7 +120,7 @@ class BinaryTree {
       return 'duplicate';
     }
 
-    if (getDepth(root) >= 5) {
+    if (getDepth(root) >= 6) {
       return 'depth';
     }
 
