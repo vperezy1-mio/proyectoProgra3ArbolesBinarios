@@ -67,7 +67,7 @@ class TreeWidget extends StatelessWidget {
 
       decoration: BoxDecoration(
 
-        color: Colors.white,
+        color: Colors.red,
 
         borderRadius:
             BorderRadius.circular(20),
