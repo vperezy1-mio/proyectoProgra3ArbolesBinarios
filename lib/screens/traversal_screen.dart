@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
+import 'package:flutter/services.dart';
+
 import '../controllers/tree_controller.dart';
 
 class TraversalScreen extends StatefulWidget {
@@ -60,7 +62,7 @@ class _TraversalScreenState
                   const Icon(
                     Icons.route,
                     size: 90,
-                    color: Colors.blue,
+                    color: Colors.green,
                   ),
 
                   const SizedBox(height: 20),
@@ -93,6 +95,7 @@ class _TraversalScreenState
                             controller
                                 .getPreorder()
                                 .join(' ');
+                        Clipboard.setData(ClipboardData(text: traversalResult));
                       });
                     },
                   ),
@@ -115,6 +118,7 @@ class _TraversalScreenState
                             controller
                                 .getInorder()
                                 .join(' ');
+                        Clipboard.setData(ClipboardData(text: traversalResult));
                       });
                     },
                   ),
@@ -137,6 +141,7 @@ class _TraversalScreenState
                             controller
                                 .getPostorder()
                                 .join(' ');
+                        Clipboard.setData(ClipboardData(text: traversalResult));
                       });
                     },
                   ),
