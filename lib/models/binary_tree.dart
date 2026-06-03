@@ -62,11 +62,25 @@ class BinaryTree {
       return 0;
     }
 
+    int rightDepth = getDepth(node.right);
     int leftDepth = getDepth(node.left);
 
-    int rightDepth = getDepth(node.right);
+    return 1 + (rightDepth > leftDepth ? rightDepth : leftDepth);
+  }
 
-    return 1 + (leftDepth > rightDepth ? leftDepth : rightDepth);
+  //Calculo de la longitud del arbol
+  int getNodeLevel(TreeNode? node, String value, int level) {
+    if (node == null) {
+      return 0;
+    }
+    if (node.value == value) {
+      return level;
+    }
+    int leftLevel = getNodeLevel(node.left, value, level + 1);
+    if (leftLevel != 0) {
+      return leftLevel;
+    }
+    return getNodeLevel(node.right, value, level + 1);
   }
 
   // INSERTAR IZQUIERDA
@@ -74,6 +88,7 @@ class BinaryTree {
     String parentValue,
     String childValue,
   ) {
+
     if (childValue.trim().isEmpty) {
       return 'empty';
     }
@@ -84,10 +99,6 @@ class BinaryTree {
     )) {
       return 'duplicate';
     }
-//cambio en caliente, profundidad máxima de 5 para evitar problemas de rendimiento
-    if (getDepth(root) >= 6) {
-      return 'depth';
-    }
 
     TreeNode? parent = findNode(root, parentValue);
 
@@ -95,13 +106,18 @@ class BinaryTree {
       return 'parent';
     }
 
+    int parentLevel = getNodeLevel(root, parentValue, 1);
+    if (parentLevel >=5 ){
+      return 'Alcanzo el nivel maximo permitido';
+    }
+
     if (parent.left != null) {
       return 'occupied';
     }
 
     parent.left = TreeNode(childValue);
-
     return 'success';
+    
   }
 
   // INSERTAR DERECHA
@@ -120,15 +136,17 @@ class BinaryTree {
       return 'duplicate';
     }
 
-    if (getDepth(root) >= 6) {
-      return 'depth';
+    int parentLevel = getNodeLevel(root, parentValue, 1);
+    if (parentLevel >=5 ){
+      return 'Alcanzo el nivel maximo permitido';
     }
-
+    
     TreeNode? parent = findNode(root, parentValue);
 
     if (parent == null) {
       return 'parent';
     }
+
 
     if (parent.right != null) {
       return 'occupied';

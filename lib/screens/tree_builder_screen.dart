@@ -130,7 +130,7 @@ class _TreeBuilderScreenState extends State<TreeBuilderScreen> {
 
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.grey,
                 ),
                 onPressed: () {
                   controller.clearTree();

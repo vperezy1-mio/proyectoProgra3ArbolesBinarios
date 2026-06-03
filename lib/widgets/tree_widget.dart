@@ -40,7 +40,7 @@ class TreeWidget extends StatelessWidget {
             Icon(
               Icons.account_tree_outlined,
               size: 80,
-              color: Colors.grey,
+              color: Colors.blueGrey,
             ),
 
             SizedBox(height: 20),
@@ -51,7 +51,7 @@ class TreeWidget extends StatelessWidget {
 
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.grey,
+                color: Colors.red,
                 fontWeight:
                     FontWeight.w500,
               ),
@@ -67,7 +67,7 @@ class TreeWidget extends StatelessWidget {
 
       decoration: BoxDecoration(
 
-        color: Colors.red,
+        color: Colors.white,
 
         borderRadius:
             BorderRadius.circular(20),
