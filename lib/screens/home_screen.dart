@@ -8,6 +8,8 @@ import 'tree_builder_screen.dart';
 import 'traversal_screen.dart';
 import 'reconstruction_screen.dart';
 
+import '../widgets/versionWidget.dart';
+
 class HomeScreen extends StatelessWidget {
 
   const HomeScreen({
@@ -157,6 +159,11 @@ class HomeScreen extends StatelessWidget {
                       );
                     },
                   ),
+
+                  const SizedBox(height: 30),
+                  const Center(
+                    child: VersionWidget(),
+                  ), //version
                 ],
               ),
             ),
