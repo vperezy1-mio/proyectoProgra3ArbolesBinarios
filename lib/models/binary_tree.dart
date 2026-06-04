@@ -108,7 +108,7 @@ class BinaryTree {
 
     int parentLevel = getNodeLevel(root, parentValue, 1);
     if (parentLevel >=5 ){
-      return 'Alcanzo el nivel maximo permitido';
+      return 'depth';
     }
 
     if (parent.left != null) {
@@ -138,7 +138,7 @@ class BinaryTree {
 
     int parentLevel = getNodeLevel(root, parentValue, 1);
     if (parentLevel >=5 ){
-      return 'Alcanzo el nivel maximo permitido';
+      return 'depth';
     }
     
     TreeNode? parent = findNode(root, parentValue);
